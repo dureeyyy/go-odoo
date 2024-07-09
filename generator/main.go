@@ -28,11 +28,11 @@ func main() {
 
 	criteria := odoo.NewCriteria()
 
-	model, err := c.FindBarcodeRule(criteria)
+	model, err := c.FindMailMessage(criteria)
 	if err != nil {
 		log.Fatalf("Error finding account: %v", err)
 	}
 
-	fmt.Println(model.BarcodeNomenclatureId.ID)
+	fmt.Println(model.Date)
 
 }
