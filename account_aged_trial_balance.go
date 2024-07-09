@@ -122,3 +122,8 @@ func (c *Client) FindAccountAgedTrialBalanceId(criteria *Criteria, options *Opti
 	}
 	return ids[0], nil
 }
+
+// Many2One convert AccountUnreconcile to *Many2One.
+func (au *AccountUnreconcile) Many2One() *Many2One {
+	return NewMany2One(au.Id.Get(), "")
+}

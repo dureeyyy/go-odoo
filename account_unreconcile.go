@@ -16,11 +16,6 @@ type AccountUnreconciles []AccountUnreconcile
 // AccountUnreconcileModel is the odoo model name.
 const AccountUnreconcileModel = "account.unreconcile"
 
-// Many2One convert AccountUnreconcile to *Many2One.
-func (au *AccountUnreconcile) Many2One() *Many2One {
-	return NewMany2One(au.Id.Get(), "")
-}
-
 // CreateAccountUnreconcile creates a new account.unreconcile model and returns its id.
 func (c *Client) CreateAccountUnreconcile(au *AccountUnreconcile) (int64, error) {
 	ids, err := c.CreateAccountUnreconciles([]*AccountUnreconcile{au})
